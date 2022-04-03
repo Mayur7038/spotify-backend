@@ -19,7 +19,11 @@ app.use(function(req, res, next) {
 
 app.use("/user" , userController);
 
+app.use("/" , async(req,res)=>{
 
+    res.send({name : "mayur"})
+
+} )
 
 
 app.listen(port ,async function (){
