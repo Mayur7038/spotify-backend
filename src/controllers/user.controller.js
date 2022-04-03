@@ -19,7 +19,7 @@ router.post("/login" , async (req,res)=>{
         }
     }
     catch(e){
-        return res.send(e.message);
+        return res.send({message : e.message});
     }
 })
 
@@ -48,7 +48,7 @@ router.post("" , async (req,res)=>{
     }
     catch(e){
         
-        return res.status(500).send("validation");
+        return res.status(500).send({message : e.message});
     }
 
 } )
@@ -64,7 +64,7 @@ router.get("" , async(req,res)=>{
 
     }
     catch(e){
-        return res.status(500).send(e);
+        return res.status(500).send({message : e.message});
     }
 
 })
