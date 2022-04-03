@@ -19,7 +19,7 @@ router.post("/login" , async (req,res)=>{
         }
     }
     catch(e){
-        res.send(e.message);
+        return res.send(e.message);
     }
 })
 
@@ -48,7 +48,7 @@ router.post("" , async (req,res)=>{
     }
     catch(e){
         
-        return res.send("validation");
+        return res.status(500).send("validation");
     }
 
 } )
@@ -59,13 +59,12 @@ router.get("" , async(req,res)=>{
 
         const user = await User.find().lean().exec();
 
-
         return res.status(201).send(user);
 
 
     }
     catch(e){
-        console.log(e);
+        return res.status(500).send(e);
     }
 
 })
