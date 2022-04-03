@@ -2,6 +2,8 @@ const express = require("express");
 
 const connect = require("./config/db");
 
+const port = process.env.PORT || 5000;
+
 const app = express();
 
 app.use(express.json());
@@ -20,7 +22,7 @@ app.use("/user" , userController);
 
 
 
-app.listen(5000,async function (){
+app.listen(port ,async function (){
 
     try{
         await connect();
